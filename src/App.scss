@@ -1,0 +1,131 @@
+@use 'scss/reset';
+@use 'scss/root';
+
+/* Utilities */
+.flex {
+  display: flex;
+  flex-wrap: wrap;  
+}
+
+html, body, section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100dvw;
+	height: 100dvh;
+	font-family: var(--ff-body);
+	font-size: var(--fs-body);
+	color: var(--neutral-1);
+	background: var(--neutral-2);
+	overflow: hidden;
+
+	@extend .flex;
+	justify-content: center;
+	align-content: center;
+
+		
+	@media screen and (max-width: 700px) {
+		height: 100%;
+		overflow-y: scroll;
+		height: auto;
+	}	
+	
+}
+
+.markdown-container {
+	margin: 0;
+	padding: 0;
+	@media screen and (max-width: 700px) {
+		width: 100%;
+	}
+}
+
+.title {
+ 	text-align: center;
+	font-size: var(--fs-header);
+	font-weight: var(--fw-semi-bold);
+}
+
+.container {
+	display: flex;
+	gap: 1rem;
+
+	@media screen and (max-width: 1300px) {
+		padding: 0 1rem;
+		@media screen and (max-width: 700px) {
+			flex-direction: column;
+		}	
+	}
+}
+
+.editor-container, .preview-container {
+	background: #414250;
+	padding: 1rem;
+	width: 550px;
+	height: 500px;
+	border-radius: 20px;
+	flex-basis: 50%;
+	overflow: hidden;
+
+	@media screen and (max-width: 1300px) {
+		width: 100%;	
+	}
+}
+
+#editor {
+	width: 100%;
+	height: 100%;
+	padding: 0.5rem;
+	color: var(--neutral-1);
+	background: #414250;
+	resize: none;
+	border: none;
+
+	@media screen and (max-width: 700px) {
+		height: 300px;
+		overflow: scroll;
+	}	
+}
+
+#preview {
+	width: 100%;
+	height: 100%;
+	padding: 0.5rem;
+	overflow-y: scroll;
+
+	display: grid;
+  gap: 0.25rem;
+
+  code, pre {
+  	padding: 0.25rem;
+  	border-radius: 5px;
+  	color: #888;
+  	background: #f1f1f1;
+  }
+
+  blockquote {
+  	border-left: 5px solid #f1f1f1;
+  	padding-left: 0.25rem;
+  }
+
+  table, th, td {
+  	border: 1px solid #f1f1f1;
+  }
+
+  @media screen and (max-width: 700px) {
+		display: flex;
+		flex-direction: column;
+
+		height: 300px;
+		overflow: scroll;
+
+		@media screen and (max-width: 400px) {
+			table {
+				display: flex;
+				flex-wrap: wrap;
+			}
+		}
+	}	
+}
