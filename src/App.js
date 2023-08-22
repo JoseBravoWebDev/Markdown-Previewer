@@ -55,6 +55,7 @@ function MarkdownPreviewer() {
   return (
     <>
       <div className="editor-container">
+        <h2 className="head-title">Editor</h2>
         <textarea
           id="editor"
           value={markdown}
@@ -62,6 +63,7 @@ function MarkdownPreviewer() {
         />
       </div>
       <div className="preview-container">
+        <h2 className="head-title">Preview</h2>
         <div id="preview">
           <ReactMarkdown
             children={markdown}
